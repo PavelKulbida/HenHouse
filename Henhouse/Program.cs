@@ -20,8 +20,9 @@ namespace Henhouse
 
     private static IHen GetCompositionRoot()
     {
-      var egg = new Egg(default);
+      var egg = new EggProxy();
       var hen = new Hen(egg);
+      egg.Egg = new Egg(hen);
 
       return hen;
     }
